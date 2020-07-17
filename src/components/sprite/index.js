@@ -9,7 +9,7 @@ export default function sprite() {
         width: "32px",
         backgroundImage:  "url(/sprites/skins/m1.png)",
         backgroundRepeat: "no-repeat",
-        bacgroundPosition: "0px 0px"
+        backgroundPosition: "0px 0px"
       }}>
     </div>
   )

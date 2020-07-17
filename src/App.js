@@ -5,11 +5,9 @@ import Sprite from './components/sprite'
 
 function App() {
   return (
-    <div className="App">
       <div className="zone-container">
         <Sprite />
       </div>
-    </div>
   );
 }
 
