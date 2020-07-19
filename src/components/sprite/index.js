@@ -12,7 +12,7 @@ export default function sprite({ image, data }) {
         width: `${w}px`,
         backgroundImage:  `url(${image})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: `-${x} -${y}`
+        backgroundPosition: `-${x}px -${y}px`
       }}>
     </div>
   )
