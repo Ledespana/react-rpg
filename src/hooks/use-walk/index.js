@@ -27,6 +27,7 @@ export default function useWalk(maxSteps) {
     setDir(prev => {
       if (directions[dir] === prev) {
         // if the direction is the same , then we move, otherwise we would be turning
+        console.dir(position);
         move(dir);
       }
       return directions[dir];
@@ -36,9 +37,35 @@ export default function useWalk(maxSteps) {
 
   function move(dir) {
     setPosition((prev) =>  {
+
+      const limitX = 960
+      const limitY = 656
+
+      let newX, newY;
+      // here we stop the character when reaching the limits.
+      // this may change if we change maps when moving to the limit
+
+      if (prev.x === 0 && modifier[dir].x <= 0 ) {
+        // if we reach the left limit
+        newX = 0;
+      } else if (prev.x === limitX && modifier[dir].x >= 0) {
+        newX = limitX;
+      } else {
+        newX = prev.x + modifier[dir].x;
+      }
+
+      if (prev.y === 0 && modifier[dir].y <= 0 ) {
+        // if we reach the top limit
+        newY = 0;
+      } else if (prev.y === limitY && modifier[dir].y >= 0) {
+        newY = limitY;
+      } else {
+        newY = prev.y + modifier[dir].y;
+      }
+
       return {
-        x: prev.x + modifier[dir].x,
-        y: prev.y + modifier[dir].y,
+        x: newX,
+        y: newY,
       }
     });
   }
