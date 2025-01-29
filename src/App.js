@@ -6,7 +6,7 @@ import Player from './components/player'
 function App() {
   return (
       <div className="zone-container">
-        <Player skin="m1" />
+        <Player skin="trump-sprite" />
       </div>
   );
 }
